@@ -41,6 +41,9 @@ double kp_offset = 175;
 double kp_out;
 int motor_min_pwm;
 double fp;
+int setP_in = 90;
+int setP_de = -30;
+int setP_init = 0;
 // --------------------- PID control parameters ---------------------
 
 void setup() {
@@ -48,8 +51,9 @@ void setup() {
   pinMode(pwm_cmd, INPUT);
   pinMode(pump_in1, OUTPUT);
   pinMode(pump_in2, OUTPUT);
-  ledcSetup(0, 5000, 8);
-  ledcAttachPin(pump_en, 0);
+  //  ledcSetup(0, 5000, 8);
+  //  ledcAttachPin(pump_en, 0);
+  ledcAttach(pump_en, 5000, 8);
   digitalWrite(pump_in1, HIGH);
   digitalWrite(pump_in2, LOW);
 
@@ -62,7 +66,7 @@ void setup() {
   Wire.setClock(100000);
 
   delay(100);
-  Serial.print("start");
+  //  Serial.print("start");
 }
 
 // ----------------------------------- PID -----------------------------------
@@ -148,54 +152,61 @@ uint8_t Read_One_Byte(uint8_t device_address, uint8_t addr) {
 void inflation() {
   digitalWrite(valve_in1, HIGH);
   digitalWrite(valve_in2, LOW);
-  //Serial.print("inflation");
+  motor_min_pwm = 185;
+  //  Serial.println("inflate: ");
+
 }
 
 
 void deflation() {
   digitalWrite(valve_in1, LOW);
   digitalWrite(valve_in2, HIGH);
-  //Serial.print("deflation");
+  motor_min_pwm = 155;
+  //  Serial.println("deflate: ");
+
+
 }
 
 void stopValves() {
   digitalWrite(valve_in1, LOW);
   digitalWrite(valve_in2, LOW);
+  //  Serial.println("stop: ");
+
 }
 
 void loop() {
   double pressure = readPressure();
   // ----------------------------------------- PWM input -----------------------------------------
   pwm_val = pulseIn(pwm_cmd, HIGH);
-  Serial.print("PWM input: ");
-  Serial.println(pwm_val);
-  if (pwm_val > 1493) {
-    inflation();
-    setpressure = 85;
-    motor_min_pwm = 220;
-    kp = (255 - motor_min_pwm) / setpressure;
-    //ki = 0.001;
-    fp = 0.8;
-//    if (pressure < 0){
-//    fp = 1/setpressure;
-//    }
-//    else {fp = 0.8;}
-  } //+90 kPa
-  if (pwm_val < 1493 && pwm_val > 1000) {
-    deflation();
-    setpressure = -25;
-    motor_min_pwm = 160;
-    kp = (255 - motor_min_pwm) / setpressure;
-    //ki = 0.001;
-    fp = 1/setpressure;
-  }//-40 kPa
-  if (pwm_val < 950) {
-    //stopValves();
-    setpressure = 0;
-    if (pressure > 0){
-      deflation();
+  //  Serial.print("PWM input: ");
+  //  Serial.println(pwm_val);
+
+  if (setpressure != setP_init) {
+    if (pressure < 0) {
+      fp = 1 / setP_de;
     }
-    else {stopValves();}
+    else {
+      fp = 2;
+    }
+  }
+
+
+  if (pwm_val > 1493) {
+    setpressure = setP_in;
+    kp = (255 - motor_min_pwm) / setpressure;
+    ki = 0.01;
+    inflation();
+  }
+
+  else if (pwm_val < 1493 && pwm_val > 1000) {
+    deflation();
+    setpressure = setP_de;
+    kp = (255 - motor_min_pwm) / setpressure;
+    ki = -0.01;
+  }
+
+  else if (pwm_val < 950) {
+    setpressure = setP_init;
   }
 
 
@@ -205,13 +216,13 @@ void loop() {
   input = int(pressure) / 1000;
   error = setpressure - input;
   cumError += error * elapsedTime;
-  
+
   //rateError = (error - lastError) / elapsedTime;
   //kd;
   //output = kp * error + motor_min_pwm; //P control
   output = kp * error + motor_min_pwm + fp * input; //feedforward P control
   //output = kp * error + motor_min_pwm + ki * cumError; //PI control
-  //output = kp * error + motor_min_pwm + ki * cumError + fp * input; //feedforward PI control
+//  output = kp * error + motor_min_pwm + ki * cumError + fp * input; //feedforward PI control
   lastError = error;
   previousTime = currentTime;
   if (output > 255) {
@@ -220,32 +231,26 @@ void loop() {
   if (output < 0 ) {
     output = 0;
   }
-//  if (error < 0) {
-//    deflation();
-//  }
-//  if (error > 0){
-//    inflation();
-//  }
-  
+
   analogWrite(pump_en, output);
   //if (error = 0) stopValves();
 
-//  Serial.print(-50);  //lower limit
-//  Serial.print(" ");
-//  Serial.print(120);  //upper limit
-//  Serial.print(" ");
+  //  Serial.print(-50);  //lower limit
+  //  Serial.print(" ");
+  //  Serial.print(120);  //upper limit
+  //  //Serial.print(120);  //upper limit
+  //  Serial.print(" ");
   static unsigned long last_time = 0;
   unsigned long current_time = millis();
-  if (current_time - last_time >=50){
+  if (current_time - last_time >= 50) {
     last_time = current_time;
     Serial.print("set_P: ");
     Serial.print(setpressure);
     Serial.print(" ");
     Serial.print("reading_P: ");
     Serial.println(input);
-    //Serial.println(ki);
   }
-  
-  //Serial.println(" ");
-  //Serial.println(output);
+
+  Serial.println(" ");
+  Serial.println(output);
 }
