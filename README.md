@@ -35,7 +35,7 @@ The exploded view (a) and assembly (b) of the mould of the soft finger’s main 
 5. Adhere the silicone tube and the cover with resin glue. 
 6. Adhere the main body and the cover with the silicone tube with resin glue.
 
-*Only the mould used to make the air chamber is disposable because it will be twisted and bent during removal from the soft finger. Nevertheless, the rest of the moulds can be reused to save future fabrication time.
+*Only the mould used to make the air chamber is disposable because it will be twisted and bent during removal from the soft finger. 
 
 ## Soft gripper *with* inextensible layers
 ### Mould
