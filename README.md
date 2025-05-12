@@ -58,4 +58,4 @@ Additional steps are shown as follows:
 2. Adhere the back of the soft finger to its main body and cover.
 *Only the mould used to make the air chamber is disposable because it will be twisted and bent during removal from the soft finger.
 *The back, cover, and main body of the soft finger can be aligned by assembling the moulds. The assembly is shown below.
-<img src="soft_finger_glue_nobgd.png">
+<img src="image/soft_finger_glue_nobgd.png">
