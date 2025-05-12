@@ -20,7 +20,9 @@ If you take this project as a reference in your research, please kindly cite the
 
 ## Soft gripper *without* inextensible layers
 ### Mould
-All the components of the mould can be fabricated by 3D printing. Please feel free to download the STL files here: [Moulds_gripper_without_tpu.zip](https://github.com/Athenachc/sav_gripper/blob/main/Moulds_gripper_without_tpu.zip)
+All the components of the mould can be fabricated by 3D printing. 
+
+Please feel free to download the STL files here: [Moulds_gripper_without_tpu.zip](https://github.com/Athenachc/sav_gripper/blob/main/Moulds_gripper_without_tpu.zip)
 
 <img src="image/fabrication_old_finger.png">
 The exploded view (a) and assembly (b) of the mould of the soft finger’s main body. The exploded view (c) and assembly (d) of the mould of the soft finger’s cover. (e)The side view of the soft gripper.
@@ -36,7 +38,10 @@ The exploded view (a) and assembly (b) of the mould of the soft finger’s main 
 
 ## Soft gripper *with* inextensible layers
 ### Mould
-All the components of the mould can be fabricated by 3D printing. Please feel free to download the STL files here: [Moulds_gripper_tpu.zip](https://github.com/Athenachc/sav_gripper/blob/main/Moulds_gripper_tpu.zip)  
+All the components of the mould can be fabricated by 3D printing. 
+
+Please feel free to download the STL files here: [Moulds_gripper_tpu.zip](https://github.com/Athenachc/sav_gripper/blob/main/Moulds_gripper_tpu.zip)  
+
 For the details of the application of this soft gripper, please see this preprint: [Aerial Grasping with Soft Aerial Vehicle Using Disturbance Observer-Based Model Predictive Control
 ](https://arxiv.org/abs/2409.14115)
 
@@ -53,3 +58,4 @@ Additional steps are shown as follows:
 2. Adhere the back of the soft finger to its main body and cover.
 *Only the mould used to make the air chamber is disposable because it will be twisted and bent during removal from the soft finger.
 *The back, cover, and main body of the soft finger can be aligned by assembling the moulds. The assembly is shown below.
+<img src="soft_finger_glue_nobgd.png">
