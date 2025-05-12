@@ -20,11 +20,13 @@ If you take this project as a reference in your research, please kindly cite the
 ## Moulds for soft gripper *without* inextensible layers
 Please feel free to download the STL files here: [Moulds_gripper_without_tpu.zip](https://github.com/Athenachc/sav_gripper/blob/main/Moulds_gripper_without_tpu.zip)
 
-<img src="image/fabrication_new_finger.png">
+<img src="image/fabrication_old_finger.png">
+The exploded view (a) and assembly (b) of the mould of the soft finger’s main body. The exploded view (c) and assembly (d) of the mould of the soft finger’s cover. (e)The side view of the soft gripper.
 
 ## Moulds for soft gripper *with* inextensible layers
 Please feel free to download the STL files here: [Moulds_gripper_tpu.zip](https://github.com/Athenachc/sav_gripper/blob/main/Moulds_gripper_tpu.zip)  
 For the details of the application of this soft gripper, please see this preprint: [Aerial Grasping with Soft Aerial Vehicle Using Disturbance Observer-Based Model Predictive Control
 ](https://arxiv.org/abs/2409.14115)
 
-<img src="image/fabrication_old_finger.png">
+<img src="image/fabrication_new_finger.png">
+The exploded view (a) and assembly (b) of the mould of the soft finger’s main body. The exploded view (c) and assembly (d) of the mould of the soft finger’s cover. (e) The side view of a soft gripper. The exploded view (f) and assembly (g) of the mould of the back of the soft finger.
