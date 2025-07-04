@@ -46,7 +46,7 @@ Please feel free to download the STL files here: [Moulds_gripper_tpu.zip](https:
 For the details of the application of this soft gripper, please see this preprint: [Aerial Grasping with Soft Aerial Vehicle Using Disturbance Observer-Based Model Predictive Control
 ](https://arxiv.org/abs/2409.14115)
 
-<img src="image/fabrication_new_finger.png">
+<img src="image/fabrication_new_finger.png" height="200">
 The exploded view (a) and assembly (b) of the mould of the soft finger’s main body. The exploded view (c) and assembly (d) of the mould of the soft finger’s cover. (e) The side view of a soft gripper. The exploded view (f) and assembly (g) of the mould of the back of the soft finger.
 
 ### Fabrication
