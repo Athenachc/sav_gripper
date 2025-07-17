@@ -10,7 +10,7 @@ For the details of the application of this soft gripper, please see this preprin
 ](https://arxiv.org/abs/2409.14115)
 
 <div align="center">
-  <img src="image/fabrication_new_finger.png" width="700">
+  <img src="/image/fabrication_new_finger.png" width="700">
 </div>
 
 The exploded view (a) and assembly (b) of the mould of the soft finger’s main body. The exploded view (c) and assembly (d) of the mould of the soft finger’s cover. (e) The side view of a soft gripper. The exploded view (f) and assembly (g) of the mould of the back of the soft finger.
@@ -27,5 +27,5 @@ Additional steps are shown as follows:
 *The back, cover, and main body of the soft finger can be aligned by assembling the moulds. The assembly is shown below.
 
 <div align="center">
-  <img src="image/soft_finger_glue_nobgd.png" width="700">
+  <img src="/image/soft_finger_glue_nobgd.png" width="700">
 </div>

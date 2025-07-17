@@ -5,7 +5,7 @@ All the components of the mould can be fabricated by 3D printing.
 Please feel free to download the STL files here: [Moulds_gripper_without_tpu.zip](/fabrication/soft_gripper_without_tpu/Moulds_gripper_without_tpu.zip)
 
 <div align="center">
-  <img src="image/fabrication_old_finger.png" width="700">
+  <img src="/image/fabrication_old_finger.png" width="700">
 </div>
 
 The exploded view (a) and assembly (b) of the mould of the soft finger’s main body. The exploded view (c) and assembly (d) of the mould of the soft finger’s cover. (e)The side view of the soft gripper.
