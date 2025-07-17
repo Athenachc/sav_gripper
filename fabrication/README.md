@@ -2,7 +2,7 @@
 ## Silicone Rubber Preparation
 1. Combine equal amounts (e.g. 25 g) of liquid parts A and B of Smooth-on Dragon Skin 30 (Pot life: 45 min; Cure Time: 16 hrs).
 2. Mix the liquid rubber contents thoroughly. It is better to mix them for 3 minutes to ensure that you scrape the sides and bottom of the mixing container.
-3. Do [Deubbling](/fabrication/README.md/Debbling-steps) (Vacuum pressure: -0.1 MPa; diameter of the vacuum barrel: 20 cm; 4-L vacuum pump). 
+3. Do [Deubbling](#debbling-steps) (Vacuum pressure: -0.1 MPa; diameter of the vacuum barrel: 20 cm; 4-L vacuum pump). 
 4. Then your rubber mixture is ready to be poured or injected into the mould.
 
 ## Debbling steps
